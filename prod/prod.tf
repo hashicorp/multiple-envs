@@ -1,9 +1,11 @@
 variable "name" { default = "prod" }
+variable "cidr" { default = "10.139.0.0/16" }
 
 module "vpc" {
   source = "../modules/vpc"
 
   name = "${var.name}"
+  cidr = "${var.cidr}"
 }
 
 resource "aws_security_group" "allow" {

@@ -1,7 +1,8 @@
 variable "name" { default = "vpc" }
+variable "cidr" { }
 
 resource "aws_vpc" "vpc" {
-  cidr_block           = "10.139.0.0/16"
+  cidr_block           = "${var.cidr}"
   enable_dns_support   = true
   enable_dns_hostnames = true
 
