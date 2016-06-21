@@ -11,4 +11,22 @@ resource "aws_vpc" "vpc" {
   }
 }
 
-output "vpc_id" { value = "${aws_vpc.vpc.id}" }
+resource "aws_security_group" "allow" {
+  name = "allow"
+  vpc_id = "${aws_vpc.vpc.id}"
+
+  // allow traffic for TCP 22
+  ingress {
+      from_port = 22
+      to_port = 22
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags {
+    Name = "${var.name}"
+  }
+}
+
+output "vpc_id"   { value = "${aws_vpc.vpc.id}" }
+output "vpc_cidr" { value = "${aws_vpc.vpc.cidr_block}" }
