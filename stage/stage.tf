@@ -1,5 +1,5 @@
-variable "name" { default = "stage" }
-variable "cidr" { default = "10.139.0.0/16" }
+variable "name"   { default = "stage" }
+variable "cidr"   { default = "10.139.0.0/16" }
 
 module "vpc" {
   source = "../modules/vpc"
