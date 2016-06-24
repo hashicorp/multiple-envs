@@ -24,6 +24,7 @@ resource "aws_security_group" "allow" {
 
   tags {
     Name = "${var.name}"
+    Demo = "f-test-1"
   }
 }
 
