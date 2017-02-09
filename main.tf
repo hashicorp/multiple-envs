@@ -9,4 +9,4 @@ module "beer" {
 }
 
 output "env"      { value = "${var.name}" }
-output "vpc_cidr" { value = "${module.beer.foo}" }
+output "foo" { value = "${module.beer.foo}" }
