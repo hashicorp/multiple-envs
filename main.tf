@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2016, 2026
+
 variable "name" { default = "REPLACE_ME" }
 variable "cidr" { default = "10.139.0.0/16" }
 
